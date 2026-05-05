@@ -8,7 +8,8 @@ st.write("약 1400개의 비캔버스 반팔티를 색상과 사이즈로 변환
 st.write("규칙 : 비캔버스 전색상 (이름) 피그먼트 반팔티, 색상, 사이즈, 수량")
 
 # CSV 로드
-df = pd.read_csv("be_canvas.csv", header=None).applymap(lambda x: str(x).strip())
+df = pd.read_csv("be_canvas.csv", header=None)
+df = df.astype(str).apply(lambda col: col.str.strip())
 
 col1, col2 = st.columns(2)
 with col1:
