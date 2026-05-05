@@ -3,12 +3,12 @@ import pandas as pd
 
 st.set_page_config(page_title="비캔버스 변환기", layout="wide")
 
-st.title("👕 색상 + 사이즈 변환 v0.1")
+st.title("👕 색상 + 사이즈 변환 v1.1")
 st.write("약 1400개의 비캔버스 반팔티를 색상과 사이즈로 변환하여 검색할 수 있습니다.")
 st.write("규칙 : 비캔버스 전색상 (이름) 피그먼트 반팔티, 색상, 사이즈, 수량")
 
 # CSV 로드
-df = pd.read_csv("be_canvas.csv", header=None)
+df = pd.read_csv("be_canvas.csv", header=None).applymap(lambda x: str(x).strip())
 
 col1, col2 = st.columns(2)
 with col1:
@@ -28,7 +28,7 @@ if st.button("변환하기"):
 
             # 문장 리스트 생성
             result_lines = df_copy.apply(
-                lambda row: f"{row[0]}, {row[1]}, {row[2]}, {row[3]}",
+                lambda row: ", ".join([str(x).strip() for x in row[:4]]),
                 axis=1
             ).tolist()
 
@@ -70,3 +70,5 @@ if "result_lines" in st.session_state:
         file_name="result.txt",
         mime="text/plain"
     )
+
+st.write("업데이트 내역 : \n- v1.0 : 초기 버전 출시 \n- v1.1 : txt 파일 다운로드 후 띄어쓰기 개선 + 6개의 반팔티 추가")
