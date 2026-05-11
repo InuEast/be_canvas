@@ -3,7 +3,7 @@ import pandas as pd
 
 st.set_page_config(page_title="비캔버스 변환기", layout="wide")
 
-st.title("👕 색상 + 사이즈 변환 v1.1")
+st.title("👕 색상 + 사이즈 변환 v1.2")
 st.write("약 1400개의 비캔버스 반팔티를 색상과 사이즈로 변환하여 검색할 수 있습니다.")
 st.write("규칙 : 비캔버스 전색상 (이름) 피그먼트 반팔티, 색상, 사이즈, 수량")
 
@@ -72,4 +72,4 @@ if "result_lines" in st.session_state:
         mime="text/plain"
     )
 
-st.write("업데이트 내역 : \n- v1.0 : 초기 버전 출시 \n- v1.1 : txt 파일 다운로드 후 띄어쓰기 개선 + 6개의 반팔티 추가")
+st.write("업데이트 내역 : \n- v1.0 : 초기 버전 출시 \n- v1.1 : txt 파일 다운로드 후 띄어쓰기 개선 + 6개의 반팔티 추가 \n- v1.2 : 중복값 제거 + 4개의 반팔티 추가")
