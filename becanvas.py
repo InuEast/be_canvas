@@ -3,7 +3,7 @@ import pandas as pd
 
 st.set_page_config(page_title="비캔버스 변환기", layout="wide")
 
-st.title("👕 색상 + 사이즈 변환 v1.2")
+st.title("👕 색상 + 사이즈 변환 v1.3")
 st.write("약 1400개의 비캔버스 반팔티를 색상과 사이즈로 변환하여 검색할 수 있습니다.")
 st.write("규칙 : 비캔버스 전색상 (이름) 피그먼트 반팔티, 색상, 사이즈, 수량")
 
